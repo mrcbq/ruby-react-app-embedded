@@ -1,0 +1,1 @@
+import { getGreetings } from '../redux/greetings/greetingsSlice';
