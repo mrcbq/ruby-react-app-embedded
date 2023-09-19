@@ -1,11 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 function App() {
-  return (<h1>Hello mrcbq!</h1>);
+  return (
+    <HashRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={<Greetings />}
+          // basename="/https://mrcbq.github.io/ruby-react-app-embedded/"
+        />
+      </Routes>
+    </HashRouter>
+  );
 }
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 ReactDOM.render(
-  <App/>,
-  document.getElementById('root'),
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>
 );
