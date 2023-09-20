@@ -1,6 +1,8 @@
-import { fetchGreetings } from '../redux/greetingsSlice';
+import { fetchGreetings } from './redux/greetingsSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
 
-const Greeting = () => {
+const Greetings = () => {
   const dispatch = useDispatch();
   const randomGreeting = useSelector((state) => state.greetings);
 
@@ -10,15 +12,12 @@ const Greeting = () => {
 
   return (
     <>
-       <div>
-          <h1>Greeting: </h1>
-          {randomGreeting.map((greeting) => (
-            <>
-                <p>{greeting.message}</p>
-            </>
-          ))}
-       </div>
+      <div>
+        <h1>Greeting: </h1>
+        <p>{randomGreeting.greetings.greeting}</p>
+      </div>
     </>
   );
 };
-export default Greeting;
+
+export default Greetings;

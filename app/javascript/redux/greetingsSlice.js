@@ -8,7 +8,15 @@ const initialState = {
   errorMessage: '',
 };
 
-export const fetchGreetings = createAsyncThunk('greeting/fetchGreetings', () => axios.get(baseUrl).then((response) => response.data));
+export const fetchGreetings = createAsyncThunk('greeting/fetchGreetings', 
+async () => {
+try { 
+  const response = await axios.get(baseUrl);
+  return response.data;
+}
+catch (error) {
+  console.log(error);
+}});
 
 const greetingsSlice = createSlice({
   name: "greeting",
@@ -22,7 +30,7 @@ const greetingsSlice = createSlice({
       .addCase(fetchGreetings.fulfilled, (state, action) => {
         const greeting = action.payload;
         state.isLoading = false;
-        state.greeting = greeting;
+        state.greetings = greeting;
       })
       .addCase(fetchGreetings.rejected, (state, action) => {
         state.isLoading = false;
