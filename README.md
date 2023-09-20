@@ -12,7 +12,6 @@
   - [🗝️ Key Features](#key-features)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
-- [🚀 Live Demo ](#-live-demo-)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -65,13 +64,6 @@
 </details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-
-🚀 Live demo of this project []()
-
-
 
 ## 💻 Getting Started <a name="getting-started"></a>
 By now you've used many different gems with Rails and this exercise will have you connect previous knowledge with new knowledge as you get a chance to use Webpack with jsbundling-rails gem.
